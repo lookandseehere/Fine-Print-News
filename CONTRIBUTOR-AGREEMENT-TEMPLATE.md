@@ -2,7 +2,7 @@
 
 *Have a lawyer review this before use. It is a starting point, not legal advice.*
 
-This agreement is between **[Your full legal name]**, operating as Fine Print News ("Fine Print News"), and **[Contributor name]** ("Contributor").
+This agreement is between **Kyra Eva May Williams**, operating as Fine Print News ("Fine Print News"), and **[Contributor name]** ("Contributor").
 
 1. **The work.** Contributor will provide: [describe the work, e.g. app development, design, fact-checking, story review] ("the Work").
 

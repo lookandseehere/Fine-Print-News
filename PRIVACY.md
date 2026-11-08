@@ -39,7 +39,7 @@ That's all. It's linked to an anonymous ID, not your name, and never includes an
 - **Links** to official sources open those websites. Their own privacy policies apply.
 
 ## Hosting
-The app is hosted by [host, e.g. Netlify]. The host may keep standard server logs, such as IP addresses and request times, for security and operations.
+The app is hosted by Netlify. The host may keep standard server logs, such as IP addresses and request times, for security and operations.
 
 ## If this changes
 We will update this policy before adding anything that collects information, such as analytics, notifications or accounts. If anything is ever collected, it will follow these laws:
