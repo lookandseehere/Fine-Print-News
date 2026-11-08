@@ -163,7 +163,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-off
   .why-link{display:none}
   main{grid-template-columns:minmax(0,1fr) 340px;column-gap:40px;align-items:start}
   main>*{grid-column:1}
-  main>.why{grid-column:2;grid-row:1 / span 4;position:sticky;top:76px;margin-top:8px}
+  main>.why{grid-column:2;grid-row:1 / span 4;margin-top:8px}
   .why h3{font-size:1.2rem}
   .why p{font-size:.92rem}
   .story{padding:22px 24px}
@@ -171,6 +171,8 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-off
   .facts{font-size:.97rem}
   .sheet{left:50%;right:auto;width:720px;margin-left:-360px}
 }
+/* keep the sidebar in view while scrolling only when the screen is tall enough to show all of it */
+@media (min-width:1024px) and (min-height:1000px){main>.why{position:sticky;top:76px}}
 </style>
 <link rel="stylesheet" href="whats-missing.css">
 </head>
@@ -211,9 +213,10 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-off
     <section class="why" id="why">
       <h3>Why I built this</h3>
       <p class="why-lead">Built by a fed-up news reader.</p>
-      <p>Honestly, I got so frustrated with the news. Everything felt twisted or divided, like I was being told what to think and which side I was on before I even knew what had actually happened. And I could see it in the people around me too, no matter how they vote.</p>
-      <p>So I finally said, okay, it's time to find another way. I started going straight to the source: the actual release, the actual numbers. Turns out it's all there. It's just buried in the fine print.</p>
-      <p>That's what this is. The facts straight from the source, in plain language, plus a few questions to help you think it through for yourself. No spin, and no one telling you what to believe. The whole point is to get you thinking critically, not to do the thinking for you. Just the fine print, and then you decide.</p>
+      <p>Honestly, I got so frustrated with the news. I constantly felt torn between needing to stay informed so I could shape my own critical lens on key issues, and wanting nothing to do with it because I never knew what part of the story I was missing.</p>
+      <p>Social media has been a wonderful source of connection, but it has also given those in power a platform to choose what information stays at the forefront and what is left to be forgotten. On top of that, I was never sure how much of what was being shared was rooted in bias, often without my even realizing it. So I finally said, okay, it's time to find another way.</p>
+      <p>Fine Print News is my way of pushing back and bringing the power back to readers. It goes straight to the source, creating a space that widens the lens while keeping it focused on what's really happening.</p>
+      <p>I also wanted readers to think about what might be missing and form their own opinion first, rather than having the news frame the story for them and leave them trying to form an opinion without the whole story. No spin, and no one telling you what to believe. The whole point is to get you thinking critically, not to do the thinking for you.</p>
       <p class="sign">— Kyra Williams, Founder</p>
     </section>
 
