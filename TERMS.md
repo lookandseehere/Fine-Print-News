@@ -1,6 +1,6 @@
 # Terms of Use — Fine Print News
 
-*Last updated: [DATE]. Draft: have it reviewed before public launch.*
+*Last updated: November 7, 2026. Draft: have it reviewed before public launch.*
 
 1. **What this is.** Fine Print News summarizes official public information from the Government of Canada, Elections Canada, provincial governments (starting with British Columbia) and provincial elections agencies, and offers questions to help you think it through.
 
@@ -14,7 +14,7 @@
 
 6. **Your notes.** Anything you type stays on your device. See the Privacy Policy.
 
-7. **Corrections.** Report errors to [contact email]. Corrections are published in a public log.
+7. **Corrections.** We correct errors when we find them.
 
 8. **No warranty.** The app is provided "as is", without warranties of any kind. To the extent the law allows, we are not liable for loss arising from its use.
 

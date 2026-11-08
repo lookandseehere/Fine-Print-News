@@ -28,5 +28,3 @@ NO WARRANTY
 The software and content are provided "as is", without warranty of any
 kind. The copyright holder is not liable for any loss arising from
 their use. Always check the linked official source.
-
-Permissions: [contact email]
