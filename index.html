@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="BC government and Elections BC updates straight from the source, with a quick check of what each release leaves out. Independent; not affiliated with the Government of BC or Elections BC.">
+<meta name="copyright" content="© 2026 Fine Print News. All rights reserved.">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#15181E" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://fineprintnews.ca/">
+<meta property="og:title" content="Fine Print News">
+<meta property="og:description" content="Official updates from across Canada, in plain words. Read the fine print. Then you decide.">
+<meta property="og:url" content="https://fineprintnews.ca/">
+<meta property="og:image" content="https://fineprintnews.ca/icons/icon-512.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="license" href="LICENSE.txt">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Fine Print">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}[hidden]{display:none!important}img{max-width:100%}</style>
+<title>Fine Print News</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Geist:wght@400;500;600&display=swap">
+<style>
+/* Layout: app-style top bar + filter chips, then rounded story cards. Each card carries a "Source check" coverage bar
+   (answered / partly / not in source) as the signature element, like a bias bar but for completeness. */
+:root{
+  /* Colour story: deep navy ink = authority and calm; cobalt = trust with a modern edge;
+     sea-glass teal = clarity ("answered"); soft lavender = nuance ("partly"); cool grey = gaps. No red or yellow alarms. */
+  --bg:#F3F6F9; --surface:#FFFFFF; --raised:#E9EEF4; --ink:#0F1B2D; --muted:#566476; --line:#DCE3EB;
+  --accent:#3B5BDB; --accent-soft:#E6EBFF;
+  --yes:#12907E; --partly:#8B7BEA; --gap:#CBD3DD;
+  --mark:#DDE4FF; --mark-ink:#1B2A6B;
+  --official:#12907E; --pending:#3B5BDB; --pending-soft:#E6EBFF;
+  --slate:#566476; --slate-soft:#E9EEF4;
+  --brand-a:#3B5BDB; --brand-b:#12907E;
+  --display:"Bricolage Grotesque", "Arial Black", system-ui, sans-serif;
+  --body:"Geist", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:"Geist", system-ui, -apple-system, "Segoe UI", sans-serif; /* labels: same calm sans as body, no digital mono */
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0B1220; --surface:#121B2B; --raised:#1A2536; --ink:#EEF2F8; --muted:#9AA8BC; --line:#25324A;
+  --accent:#8FA4FF; --accent-soft:#1D2A55;
+  --yes:#3CCBB5; --partly:#B1A5FF; --gap:#36435A;
+  --mark:#2A3770; --mark-ink:#E6EBFF;
+  --official:#3CCBB5; --pending:#8FA4FF; --pending-soft:#1D2A55;
+  --slate:#A9B6C8; --slate-soft:#1A2536; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0B1220; --surface:#121B2B; --raised:#1A2536; --ink:#EEF2F8; --muted:#9AA8BC; --line:#25324A;
+  --accent:#8FA4FF; --accent-soft:#1D2A55;
+  --yes:#3CCBB5; --partly:#B1A5FF; --gap:#36435A;
+  --mark:#2A3770; --mark-ink:#E6EBFF;
+  --official:#3CCBB5; --pending:#8FA4FF; --pending-soft:#1D2A55;
+  --slate:#A9B6C8; --slate-soft:#1A2536; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
+.wrap{max-width:640px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* top bar */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--surface) 88%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:12px}
+.logo{display:flex;align-items:center;gap:9px;white-space:nowrap;font-family:var(--display);font-weight:800;font-size:1.2rem;letter-spacing:-.02em}
+.mark{width:28px;height:28px;border-radius:8px;background:var(--brand-a);display:grid;place-items:center;flex:none}
+.mark svg{display:block}
+.word{letter-spacing:-.02em}
+.news{font-weight:500;color:var(--accent);letter-spacing:-.01em}
+.date{display:grid;text-align:right;font:500 .74rem var(--mono);color:var(--ink);white-space:nowrap;line-height:1.25}
+.date small{font-size:.66rem;color:var(--muted);font-weight:500}
+.scope{display:grid;gap:8px;padding-block:14px 2px}
+.tabs{display:inline-flex;justify-self:start;background:var(--raised);border-radius:999px;padding:3px;gap:2px}
+.tab{border:0;background:transparent;color:var(--muted);border-radius:999px;padding:7px 18px;font:600 .86rem var(--body);cursor:pointer}
+.tab[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 3px rgba(15,27,45,.12)}
+.subtabs{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.soon{font-size:.76rem;color:var(--muted)}
+.sec{margin:8px 0 0;font-family:var(--display);font-weight:800;font-size:1.1rem;letter-spacing:-.01em}
+.sec span{color:var(--accent)}
+.sec-note{margin:-4px 0 0;font-size:.82rem;color:var(--muted);max-width:60ch}
+.all{display:grid;gap:10px;margin-top:8px}
+.updates{list-style:none;margin:0;padding:0;background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.upd{padding:12px 16px;border-top:1px solid var(--line);display:grid;gap:3px}
+.upd:first-child{border-top:0}
+.upd-meta{font-size:.75rem;color:var(--muted)}
+.upd-title{margin:0;font-size:.93rem;font-weight:500;line-height:1.35}
+.upd-links{display:flex;gap:14px;margin-top:2px}
+.upd-orig,.upd-dive{font:500 .8rem var(--body);color:var(--accent);text-decoration:none;background:none;border:0;padding:4px 0;cursor:pointer}
+.chips{display:flex;gap:6px;overflow-x:auto;padding-block:2px 12px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:0;background:var(--raised);color:var(--ink);border-radius:999px;padding:7px 14px;font:500 .84rem var(--body);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--surface)}
+
+/* hero line */
+.hero{padding-block:22px 6px;display:grid;gap:6px}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(1.7rem,6vw,2.3rem);line-height:1.02;letter-spacing:-.03em;margin:0;text-wrap:balance}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p{margin:0;color:var(--muted);font-size:.95rem;max-width:44ch}
+
+main{display:grid;gap:12px;padding-block:14px 48px}
+
+/* story card: four calm layers: meta, headline, facts, actions */
+.story{background:var(--surface);border-radius:18px;padding:18px;display:grid;gap:12px;border:1px solid var(--line)}
+.meta{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:.8rem;color:var(--muted)}
+.tag{font:600 .74rem var(--body);color:var(--accent);white-space:nowrap}
+.story h2{font-family:var(--display);font-weight:800;font-size:1.3rem;line-height:1.14;letter-spacing:-.02em;margin:0;text-wrap:balance}
+.facts{margin:0;padding:0;list-style:none;display:grid;gap:5px;font-size:.92rem}
+.facts li{display:flex;gap:9px}
+.facts li::before{content:"";flex:none;width:5px;height:5px;border-radius:50%;background:var(--muted);margin-top:.6em}
+
+.foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;padding-top:2px}
+.src{background:none;border:0;padding:10px 2px;color:var(--muted);font:500 .84rem var(--body);cursor:pointer}
+.src:hover{color:var(--ink)}
+.nb{display:contents}
+.scrim{position:fixed;inset:0;z-index:20;background:rgba(8,14,28,.45)}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:21;max-height:88%;overflow:auto;background:var(--surface);border-radius:20px 20px 0 0;box-shadow:0 -12px 40px rgba(8,14,28,.25);padding-bottom:max(20px,env(safe-area-inset-bottom,0px))}
+.sheet-in{max-width:640px;margin:0 auto;padding:10px max(18px,env(safe-area-inset-right,0px)) 0 max(18px,env(safe-area-inset-left,0px));display:grid;gap:10px;position:relative}
+.sheet-grab{width:40px;height:4px;border-radius:2px;background:var(--line);margin:0 auto 6px}
+.sheet-close{position:absolute;top:14px;right:max(18px,env(safe-area-inset-right,0px));background:var(--raised);border:0;border-radius:999px;padding:6px 12px;color:var(--ink);font:500 .8rem var(--body);cursor:pointer}
+#sheetBody{display:grid;gap:10px}
+#sheetBody h3{margin:0;font-family:var(--display);font-weight:800;font-size:1.35rem;letter-spacing:-.02em;padding-right:70px}
+.sheet-kicker,.sheet-label{margin:0;font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.sheet-label{margin-top:6px}
+.sheet-meta{margin:0;color:var(--muted);font-size:.85rem}
+.sheet-go{display:block;text-align:center;background:var(--ink);color:var(--surface);text-decoration:none;font-weight:600;border-radius:12px;padding:13px 16px;margin-top:6px}
+.sheet-note{margin:0;font-size:.8rem;color:var(--muted);max-width:60ch}
+@media (prefers-reduced-motion:no-preference){.sheet:not([hidden]){animation:sheetup .22s ease-out}@keyframes sheetup{from{transform:translateY(30px);opacity:.6}to{transform:none;opacity:1}}}
+
+/* notebook: match the new look */
+.rn{border-radius:16px;border-color:var(--line);background:var(--surface);--rn-no:var(--slate);--rn-no-soft:var(--slate-soft);--rn-partly-soft:color-mix(in srgb,var(--partly) 16%,var(--surface))}
+.rn-role,.rn-quote{font-family:var(--display);font-weight:600;letter-spacing:-.01em}
+.rn-option,.rn-link,.rn-result,.rn-established,.rn-btn,.rn-text{border-radius:10px}
+.rn-cta{border:0;background:var(--ink);color:var(--surface);padding:8px 16px 8px 8px;font-size:.9rem}
+.rn-cta[aria-expanded="true"]{background:var(--raised);color:var(--ink)}
+.rn-panel{flex-basis:100%}
+
+button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.empty{color:var(--muted);text-align:center;padding:24px;font-size:.9rem}
+.about{display:grid;gap:10px;padding-block:8px 0;font-size:.84rem;color:var(--muted)}
+.about summary{cursor:pointer;font-weight:600;color:var(--ink);padding:10px 0;font-size:.9rem}
+.about details[open] summary{margin-bottom:4px}
+.why-lead{font-weight:600;color:var(--accent)}
+.about h3{margin:0;font-family:var(--display);font-weight:800;font-size:1.05rem;letter-spacing:-.01em;color:var(--ink)}
+.about dl{margin:0;display:grid;gap:4px}
+.about dt{font:500 .68rem var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink);margin-top:6px}
+.about dd{margin:0;max-width:65ch;line-height:1.5}
+.legal{margin:6px 0 0;padding-top:12px;border-top:1px solid var(--line);font-size:.76rem}
+.why{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px 18px;display:grid;gap:10px}
+.why h3{margin:0;font-family:var(--display);font-weight:800;font-size:1.35rem;letter-spacing:-.02em}
+.why p{margin:0;max-width:62ch;line-height:1.6}
+.why .sign{font-weight:600;color:var(--muted)}
+</style>
+<link rel="stylesheet" href="whats-missing.css">
+</head>
+<body>
+
+
+
+<header class="top">
+  <div class="wrap">
+    <div class="bar">
+      <div class="logo"><span class="mark" aria-hidden="true"><svg viewBox="0 0 100 100" width="28" height="28"><g fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M36 24 H25 V76 H36"/><path d="M64 24 H75 V76 H64"/></g><g stroke="#fff" stroke-width="5.5" stroke-linecap="round"><line x1="50" y1="50" x2="50.0" y2="37.0"/><line x1="50" y1="50" x2="38.7" y2="43.5"/><line x1="50" y1="50" x2="38.7" y2="56.5"/><line x1="50" y1="50" x2="50.0" y2="63.0"/><line x1="50" y1="50" x2="61.3" y2="56.5"/><line x1="50" y1="50" x2="61.3" y2="43.5"/></g></svg></span><span class="word">Fine Print <span class="news">News</span></span></div>
+      <span class="date" id="updated"><small>Last updated</small><span>Nov 7, 2026</span></span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <section class="hero">
+    <h1>Read the fine print. <em>Then you decide.</em></h1>
+    <p>Official updates from across Canada, in plain words, with questions that help you think for yourself.</p>
+  </section>
+
+  <nav class="scope" aria-label="Region">
+    <div class="tabs" id="tabs"></div>
+    <div class="subtabs" id="subtabs" hidden></div>
+  </nav>
+
+  <main>
+    <h2 class="sec">Top stories · <span id="scopeName">Canada</span></h2>
+    <div id="stories" style="display:grid;gap:12px"></div>
+    <section class="all" aria-labelledby="updH">
+      <h2 class="sec" id="updH">All updates</h2>
+      <p class="sec-note" id="updNote"></p>
+      <ul class="updates" id="updates"></ul>
+    </section>
+
+    <section class="why" id="why">
+      <h3>Why I built this</h3>
+      <p class="why-lead">Built by a fed-up news reader.</p>
+      <p>Honestly, I got so frustrated with the news. Everything felt twisted or divided, like I was being told what to think and which side I was on before I even knew what had actually happened. And I could see it in the people around me too, no matter how they vote.</p>
+      <p>So I finally said, okay, it's time to find another way. I started going straight to the source: the actual release, the actual numbers. Turns out it's all there. It's just buried in the fine print.</p>
+      <p>That's what this is. The facts straight from the source, in plain language, plus a few questions to help you think it through for yourself. No spin, and no one telling you what to believe. The whole point is to get you thinking critically, not to do the thinking for you. Just the fine print, and then you decide.</p>
+      <p class="sign">— Kyra, Squamish, BC</p>
+    </section>
+
+    <footer class="about" id="about">
+      <details>
+      <summary>About, privacy &amp; policies</summary>
+      <dl>
+        <dt>Mission</dt>
+        <dd>To help people think critically about what their government says and does: the original source first, then good questions instead of ready-made answers. We never tell you what to think.</dd>
+        <dt>Independent</dt>
+        <dd>Fine Print News is an independent project. It is not affiliated with, endorsed by, or speaking for the Government of Canada, Elections Canada, the Government of British Columbia or Elections BC.</dd>
+        <dt>Sources</dt>
+        <dd>Facts are restated in our own words from official public sources, and every story links to the original. The original is the authoritative version. If anything here differs from it, the source wins.</dd>
+        <dt>Privacy</dt>
+        <dd>No accounts and no ads. Your answers stay on your device. To improve the app, we count anonymously how far people get in “What’s missing?” (which cards they reach), never names and never anything you type. If you choose “Add my picks,” only the options you tapped are shared with other readers, as totals.</dd>
+        <dt>Corrections</dt>
+        <dd>Corrections will be listed publicly. Contact details for reporting an error are coming at launch.</dd>
+        <dt>Policies</dt>
+        <dd><a href="PRIVACY.html">Privacy policy</a> · <a href="TERMS.html">Terms of use</a> · <a href="LICENSE.txt">Licence</a> · <a href="NOTICES.txt">Notices</a></dd>
+      </dl>
+      </details>
+      <p class="legal">© 2026 Fine Print News. All rights reserved. Fine Print News™ and the asterisk logo are trademarks of Fine Print News. Information only; not legal, financial or voting advice.</p>
+    </footer>
+  </main>
+</div>
+
+<div class="scrim" id="scrim" hidden></div>
+<section class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheet-in">
+    <div class="sheet-grab" aria-hidden="true"></div>
+    <button class="sheet-close" id="sheetClose" type="button">Close</button>
+    <div id="sheetBody"></div>
+  </div>
+</section>
+
+<script src="whats-missing.js"></script>
+<script src="data/stories.js"></script>
+<script>
+(function () {
+  /* "What other readers think": anonymous pick totals shared between viewers.
+     Uses the Claude page's shared store when available (the db capability); elsewhere it switches off.
+     Each reader has one document, picks/<opaque id>, holding only option numbers per story. */
+  function makeCommunity() {
+    if (!(window.claude && typeof window.claude.use === "function")) return null;
+    var subs = [], docs = [], status = "loading", uid = null, canShare = true, chain = Promise.resolve();
+    function tallyFor(id) {
+      if (status !== "ready") return { status: status, canShare: canShare };
+      var t = { status: "ready", readers: 0, ask: {}, spot: {}, canShare: canShare };
+      docs.forEach(function (d) {
+        var p = d.data.stories && d.data.stories[id];
+        if (!p) return;
+        t.readers++;
+        if (p.q != null) t.ask[p.q] = (t.ask[p.q] || 0) + 1;
+        (Array.isArray(p.spotted) ? p.spotted : []).forEach(function (i) { t.spot[i] = (t.spot[i] || 0) + 1; });
+      });
+      return t;
+    }
+    function notify() { subs.forEach(function (s) { s.cb(tallyFor(s.id)); }); }
+    var ready = Promise.all([window.claude.use("db"), window.claude.use("user")]).then(function (r) {
+      var db = r[0], user = r[1];
+      if (!db) { status = "unavailable"; notify(); return null; }
+      return Promise.resolve(user ? user.id() : null).then(function (id) {
+        uid = id;
+        if (!uid) canShare = false;
+        return user && user.can ? Promise.resolve(user.can("data.write")).then(function (c) { if (c === false) canShare = false; }, function () {}) : null;
+      }).then(function () {
+        var timer = setTimeout(function () { if (status === "loading") { status = "error"; notify(); } }, 10000);
+        db.collection("picks").onSnapshot(function (snap) {
+          docs = snap.docs.map(function (d) { return { id: d.id, data: d.data() || {} }; });
+          if (!snap.metadata.fromCache) clearTimeout(timer);
+          status = "ready"; notify();
+        }, function () { clearTimeout(timer); status = "error"; notify(); });
+        return db;
+      });
+    }).catch(function () { status = "unavailable"; notify(); return null; });
+    return {
+      subscribe: function (id, cb) {
+        var s = { id: id, cb: cb }; subs.push(s); cb(tallyFor(id));
+        return function () { subs = subs.filter(function (x) { return x !== s; }); };
+      },
+      share: function (id, picks) {
+        var p = chain.then(function () { return ready; }).then(function (db) {
+          if (!db || !uid) throw new Error("unavailable");
+          var mine = docs.filter(function (d) { return d.id === uid; })[0];
+          var body = JSON.parse(JSON.stringify(mine ? mine.data : {}));
+          body.stories = body.stories || {};
+          body.stories[id] = { q: String(picks.q), spotted: picks.spotted };
+          return db.doc("picks/" + uid).set(body);
+        });
+        chain = p.catch(function () {});
+        return p;
+      }
+    };
+  }
+  var COMMUNITY = makeCommunity();
+
+  /* Usage counts for the creator: each reader's anonymous counts go to usage/<opaque id>.
+     Only the page owner can read them (Claude reports them in chat). Off outside Claude. */
+  function makeUsage() {
+    if (!(window.claude && typeof window.claude.use === "function")) return null;
+    var timer = null, pending = null, chain = Promise.resolve();
+    var ready = Promise.all([window.claude.use("db"), window.claude.use("user")]).then(function (r) {
+      if (!r[0] || !r[1]) return null;
+      return Promise.resolve(r[1].id()).then(function (id) { return id ? { db: r[0], uid: id } : null; });
+    }).catch(function () { return null; });
+    return function (m) {
+      pending = m; clearTimeout(timer);
+      timer = setTimeout(function () {
+        var snap = JSON.parse(JSON.stringify(pending));
+        chain = chain.then(function () { return ready; }).then(function (ctx) {
+          if (ctx) return ctx.db.doc("usage/" + ctx.uid).set({ stories: snap });
+        }).catch(function () {});
+      }, 1500);
+    };
+  }
+  var USAGE = makeUsage();
+
+  // ----- Region: Canada-wide, or a province (BC now; more later) -----
+  var PROVINCES = [{ id: "bc", name: "British Columbia", ready: true }];
+  var CANADA_ACTIONS = [
+    { label: "See records others already requested", url: "https://open.canada.ca/en/search/ati",
+      look: "Federal records released through past access to information requests. Your answer may already be here." },
+    { label: "Contact your MP", url: "https://www.ourcommons.ca/Members/en",
+      look: "Find your Member of Parliament. A short, specific question works best." },
+    { label: "Join a federal consultation", url: "https://www.canada.ca/en/government/system/consultations/consultingcanadians.html",
+      look: "Open Government of Canada consultations where you can give input." }
+  ];
+  function scopeFromHash() { var h = (location.hash || "").slice(1); return h === "bc" ? "bc" : "canada"; }
+  var scope = scopeFromHash();
+
+  var tabs = document.getElementById("tabs"), sub = document.getElementById("subtabs");
+  function nav() {
+    tabs.innerHTML = ""; sub.innerHTML = "";
+    [["canada", "Canada"], ["provinces", "Provinces"]].forEach(function (t) {
+      var on = t[0] === "canada" ? scope === "canada" : scope !== "canada";
+      var b = el("button", "tab", t[1]); b.type = "button"; b.setAttribute("aria-pressed", String(on));
+      b.onclick = function () { setScope(t[0] === "canada" ? "canada" : PROVINCES[0].id); };
+      tabs.appendChild(b);
+    });
+    sub.hidden = scope === "canada";
+    PROVINCES.forEach(function (pv) {
+      var b = el("button", "chip", pv.name); b.type = "button"; b.setAttribute("aria-pressed", String(scope === pv.id));
+      b.onclick = function () { setScope(pv.id); };
+      sub.appendChild(b);
+    });
+    sub.appendChild(el("span", "soon", "More provinces coming soon"));
+  }
+  function setScope(sc) {
+    if (sc === scope) return;
+    scope = sc;
+    try { history.replaceState(null, "", sc === "canada" ? location.pathname + location.search : "#" + sc); } catch (e) { location.hash = sc; }
+    nav(); draw(); window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+  window.addEventListener("hashchange", function () { var sc = scopeFromHash(); if (sc !== scope) { scope = sc; nav(); draw(); } });
+
+  function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; }
+
+  function draw() {
+    var wrap = document.getElementById("stories");
+    wrap.innerHTML = "";
+    var isBC = scope === "bc";
+    document.getElementById("scopeName").textContent = isBC ? "British Columbia" : "Canada";
+    var list = NOTEBOOK_STORIES.filter(function (s) { return s.scope === scope; });
+    if (!list.length) wrap.appendChild(el("div", "empty", "No top stories here yet."));
+    list.forEach(function (s) {
+      var card = el("article", "story"); card.id = "story-" + s.id;
+      var meta = el("div", "meta");
+      meta.appendChild(el("span", null, s.agency + " · " + s.date.replace(/, \d{4}$/, "")));
+      meta.appendChild(el("span", "tag", s.tag));
+      card.appendChild(meta);
+      card.appendChild(el("h2", null, s.title));
+      var ul = el("ul", "facts");
+      (s.facts || []).forEach(function (f) { ul.appendChild(el("li", null, f)); });
+      card.appendChild(ul);
+      var foot = el("div", "foot");
+      var nb = el("div", "nb");
+      foot.appendChild(nb);
+      var a = el("button", "src", "Original ↗"); a.type = "button"; a.onclick = function () { openSource(s, a); };
+      foot.appendChild(a);
+      card.appendChild(foot);
+      wrap.appendChild(card);
+      ReporterNotebook.mountButton(nb, s, { community: COMMUNITY, onMetrics: USAGE || undefined, actions: s.scope === "canada" ? CANADA_ACTIONS : undefined });
+    });
+
+    // All updates: every release from the sources, one line each
+    var note = document.getElementById("updNote");
+    note.textContent = isBC
+      ? "From BC Gov News and Elections BC. The provincial newsroom is only posting health, safety and legal updates until the new cabinet is sworn in."
+      : "From the Prime Minister's Office, Elections Canada and federal departments on Canada.ca.";
+    var ups = document.getElementById("updates");
+    ups.innerHTML = "";
+    (window.NEWS_UPDATES || []).filter(function (u) { return u.scope === scope; }).forEach(function (u) {
+      var li = el("li", "upd");
+      var top = el("div", "upd-meta", u.date + " · " + u.agency);
+      var t = el("p", "upd-title", u.title);
+      var row = el("div", "upd-links");
+      if (u.story) {
+        var go = el("button", "upd-dive", "Top story ↑"); go.type = "button";
+        go.onclick = function () { var c = document.getElementById("story-" + u.story); if (c) { c.scrollIntoView({ behavior: "smooth", block: "start" }); } };
+        row.appendChild(go);
+      }
+      var o = el("a", "upd-orig", "Original ↗"); o.href = u.url; o.target = "_blank"; o.rel = "noopener";
+      row.appendChild(o);
+      li.appendChild(top); li.appendChild(t); li.appendChild(row);
+      ups.appendChild(li);
+    });
+  }
+
+  // ----- "Read the original": an in-app source sheet -----
+  var sheet = document.getElementById("sheet"), scrim = document.getElementById("scrim"), lastOpener = null;
+  function openSource(s, opener) {
+    lastOpener = opener;
+    var body = document.getElementById("sheetBody");
+    body.innerHTML = "";
+    body.appendChild(el("p", "sheet-kicker", "The original"));
+    var h = el("h3", null, s.agency); h.id = "sheetTitle"; body.appendChild(h);
+    body.appendChild(el("p", "sheet-meta", "Published " + s.date + " · " + new URL(s.source).hostname));
+    body.appendChild(el("p", "sheet-label", "What we took from it"));
+    var ul = el("ul", "facts"); (s.facts || []).forEach(function (f) { ul.appendChild(el("li", null, f)); }); body.appendChild(ul);
+    var go = el("a", "sheet-go", "Read it on the official site ↗"); go.href = s.source; go.target = "_blank"; go.rel = "noopener";
+    body.appendChild(go);
+    body.appendChild(el("p", "sheet-note", "Government pages can't be shown inside Fine Print News, so the original opens on the official site, exactly as published. If anything here differs, the original wins."));
+    sheet.hidden = false; scrim.hidden = false; document.body.style.overflow = "hidden";
+    document.getElementById("sheetClose").focus();
+  }
+  function closeSource() { sheet.hidden = true; scrim.hidden = true; document.body.style.overflow = ""; if (lastOpener) lastOpener.focus(); }
+  document.getElementById("sheetClose").onclick = closeSource;
+  scrim.onclick = closeSource;
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !sheet.hidden) closeSource(); });
+
+  // "Last updated" in the reader's own time zone, e.g. "Last updated Nov 7, 4:58 p.m. MST"
+  (function () {
+    var out = document.getElementById("updated");
+    var iso = window.LAST_UPDATED;
+    if (!out || !iso) return;
+    var t = new Date(iso);
+    if (isNaN(t)) return;
+    try {
+      var day = t.toLocaleDateString("en-CA", { month: "short", day: "numeric" });
+      var time = t.toLocaleTimeString("en-CA", { hour: "numeric", minute: "2-digit", timeZoneName: "short" });
+      out.lastChild.textContent = day + ", " + time;
+      out.setAttribute("title", t.toString());
+    } catch (e) {}
+  })();
+
+  nav();
+  draw();
+})();
+</script>
+
+<script>
+if ("serviceWorker" in navigator) { window.addEventListener("load", function () { navigator.serviceWorker.register("sw.js").catch(function () {}); }); }
+</script>
+</body>
+</html>

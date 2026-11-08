@@ -1,0 +1,32 @@
+Fine Print News — Proprietary Licence
+
+Copyright © 2026 [Your full legal name], operating as Fine Print News.
+All rights reserved.
+
+This software, including its source code, design, written content
+(headlines, summaries, notebook questions, notes and explanations),
+icons and logo, is the property of the copyright holder.
+
+You may not copy, modify, distribute, sublicense, sell or create
+derivative works from any part of it without prior written permission
+from the copyright holder, except:
+  - viewing and using the published app for personal, non-commercial use;
+  - quoting short excerpts for news reporting, criticism, review,
+    research or education, with credit to "Fine Print News", as allowed
+    under fair dealing in the Copyright Act (Canada).
+
+TRADEMARKS
+"Fine Print News", "Fine Print" and the red asterisk logo are trademarks
+of the copyright holder (trademark application pending once filed).
+Nothing in this licence grants any right to use them.
+
+THIRD-PARTY MATERIAL
+Some material is not owned by Fine Print News and stays under its own
+terms. See NOTICES.txt.
+
+NO WARRANTY
+The software and content are provided "as is", without warranty of any
+kind. The copyright holder is not liable for any loss arising from
+their use. Always check the linked official source.
+
+Permissions: [contact email]

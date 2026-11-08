@@ -1,0 +1,40 @@
+Third-party notices — Fine Print News
+
+1. GOVERNMENT AND ELECTIONS INFORMATION
+   Facts in this app come from public material published by:
+   - the Government of Canada (canada.ca, pm.gc.ca)
+   - Elections Canada (elections.ca)
+   - the Government of British Columbia (news.gov.bc.ca)
+   - Elections BC (elections.bc.ca, results.elections.bc.ca)
+
+   Government of Canada terms (https://www.canada.ca/en/transparency/terms.html)
+   allow reproduction for non-commercial purposes without charge or further
+   permission. Reproduction for commercial redistribution needs prior written
+   permission, and official symbols (Canada wordmark, Arms, flag symbol) may
+   not be used. If Fine Print News becomes commercial, request permission first.
+
+   - Facts are restated in Fine Print News's own words, and each
+     story links to the original.
+   - Government text is not reproduced at length.
+   - The Province of BC's copyright page says its material may not be
+     reproduced or redistributed without prior written permission:
+     https://www2.gov.bc.ca/gov/admin/copyright.page
+
+   Permission status (update before public launch):
+     Province of BC (QPIPPCopyright@gov.bc.ca): [not yet requested / requested on DATE / granted on DATE]
+     Elections BC:                              [not yet requested / requested on DATE / granted on DATE]
+     Elections Canada:                          [not yet requested / requested on DATE / granted on DATE]
+
+   Fine Print News is not affiliated with or endorsed by the Government
+   of Canada, Elections Canada, the Government of British Columbia or
+   Elections BC.
+
+2. FONTS
+   The app loads these fonts from Google Fonts. Each is licensed under
+   the SIL Open Font License 1.1 (https://openfontlicense.org):
+   - Bricolage Grotesque
+   - Geist
+
+3. LINKS
+   Links to other websites are provided for verification. Fine Print
+   News does not control and is not responsible for their content.
