@@ -150,6 +150,27 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-off
 .why h3{margin:0;font-family:var(--display);font-weight:800;font-size:1.35rem;letter-spacing:-.02em}
 .why p{margin:0;max-width:62ch;line-height:1.6}
 .why .sign{font-weight:600;color:var(--muted)}
+.why-link{justify-self:start;margin-top:4px;font:600 .85rem var(--body);color:var(--accent);text-decoration:none}
+.why-link:hover{text-decoration:underline}
+#why{scroll-margin-top:72px}
+
+/* desktop: wider page, story column + "Why I built this" sidebar */
+@media (min-width:1024px){
+  .wrap{max-width:1160px;padding-left:32px;padding-right:32px}
+  .hero{padding-block:40px 8px;gap:10px}
+  .hero h1{font-size:3rem}
+  .hero p{font-size:1.05rem;max-width:52ch}
+  .why-link{display:none}
+  main{grid-template-columns:minmax(0,1fr) 340px;column-gap:40px;align-items:start}
+  main>*{grid-column:1}
+  main>.why{grid-column:2;grid-row:1 / span 4;position:sticky;top:76px;margin-top:8px}
+  .why h3{font-size:1.2rem}
+  .why p{font-size:.92rem}
+  .story{padding:22px 24px}
+  .story h2{font-size:1.45rem}
+  .facts{font-size:.97rem}
+  .sheet{left:50%;right:auto;width:720px;margin-left:-360px}
+}
 </style>
 <link rel="stylesheet" href="whats-missing.css">
 </head>
@@ -170,6 +191,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-off
   <section class="hero">
     <h1>Read the fine print. <em>Then you decide.</em></h1>
     <p>Official updates from across Canada with questions that help you think for yourself and advocate when more needs to be said.</p>
+    <a class="why-link" href="#why">Why I built this →</a>
   </section>
 
   <nav class="scope" aria-label="Region">
