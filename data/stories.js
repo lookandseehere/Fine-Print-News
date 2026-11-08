@@ -12,10 +12,10 @@ window.NOTEBOOK_STORIES = [
     id: "count",
     scope: "bc",
     tag: "Elections",
-    facts: ["Conservative Party leads in 64 districts, BC NDP in 27, BC Green in 2.", "Preliminary turnout: 49.99% of registered voters.", "Final count in progress; planned for Nov 6–10."],
+    facts: ["Conservative Party leads in 64 districts, BC NDP in 27, BC Green in 2.", "Preliminary turnout now 51.51%: 1,925,638 votes considered out of 3,738,182 registered voters.", "Final count still in progress as of Nov 7; results aren't final yet."],
     title: "Final count under way: Conservatives leading in 64 of 93 districts",
     agency: "Elections BC",
-    date: "Nov 6, 2026",
+    date: "Nov 7, 2026",
     source: "https://results.elections.bc.ca/",
     notebook: {
       role: "You're at Elections BC's media briefing on the vote count.",
@@ -26,9 +26,9 @@ window.NOTEBOOK_STORIES = [
       ],
       spot: [
         { label: "When results become final", status: "yes",
-          note: "Elections BC lists the final count as planned for November 6 to 10, and says final results come once every district finishes." },
+          note: "The results page says final results come once the final count finishes in every district, but gives no completion date. Elections BC earlier listed the final count as planned for November 6 to 10." },
         { label: "Votes for each party", status: "yes",
-          note: "Published for every party, with share of the vote, and broken down by district." },
+          note: "Published for every party, with share of the vote, and broken down by district. As of November 7: Conservative Party 47.86%, BC NDP 37.46%, BC Green Party 11.12%." },
         { label: "How many ballots are left", status: "no",
           note: "The results page shows ballot boxes reporting and total votes considered, but not how many ballots remain." },
         { label: "Which close races could flip", status: "no",
@@ -38,7 +38,7 @@ window.NOTEBOOK_STORIES = [
       ],
       established: [
         "Which party leads in each of the 93 districts right now",
-        "Preliminary turnout of 49.99% of registered voters",
+        "Turnout of 51.51% of registered voters, as the count stood on November 7",
         "That the count is still in progress, so leads aren't final"
       ],
       find: [
@@ -436,11 +436,114 @@ window.NOTEBOOK_STORIES = [
         }
       ]
     }
+  },
+  {
+    "id": "tfw",
+    "scope": "canada",
+    "tag": "Economy",
+    "title": "Temporary Foreign Worker Program: longer approvals now, province-led limits proposed for 2027",
+    "agency": "Employment and Social Development Canada",
+    "date": "Nov 6, 2026",
+    "source": "https://www.canada.ca/en/employment-social-development/news/2026/11/government-of-canada-announces-targeted-reforms-to-the-temporary-foreign-worker-program-to-respond-to-labour-market-needs.html",
+    "facts": [
+      "Low-wage stream LMIAs submitted from November 6 can last up to two years, up from one.",
+      "Early childhood educators join the exceptions to the pause in areas with unemployment of 6% or higher.",
+      "From March 1, 2027, provinces and territories that opt in could shape which jobs are open and raise the low-wage cap to 15% of a workforce, from 10%."
+    ],
+    "notebook": {
+      "role": "You're at the announcement in Gatineau with the federal jobs and immigration ministers.",
+      "ask": [
+        "How many employers and workers will these changes affect?",
+        "Which provinces and territories plan to opt in?",
+        "How will the government measure whether the changes work?"
+      ],
+      "spot": [
+        {
+          "label": "What changes right away",
+          "status": "yes",
+          "note": "Low-wage LMIA applications submitted on or after November 6 can run up to two years, and early childhood educators are added to the priority-sector exceptions alongside healthcare, construction and food processing."
+        },
+        {
+          "label": "How many people are affected",
+          "status": "no",
+          "note": "No count of affected workers or employers. It says temporary foreign workers make up about 1% of the labour force."
+        },
+        {
+          "label": "Provinces' role",
+          "status": "partly",
+          "note": "Describes the opt-in model starting March 1, 2027, and says the minister will meet provincial and territorial counterparts in the coming weeks. No province is named as opting in."
+        },
+        {
+          "label": "Cost",
+          "status": "partly",
+          "note": "Budget 2026 provides $151.5 million over five years for service delivery and $82 million over four years for the Migrant Worker Support Program. No overall cost of the changes is given."
+        },
+        {
+          "label": "Worker protection and enforcement",
+          "status": "yes",
+          "note": "Describes employer inspections, penalties of up to $1 million per year, temporary or permanent bans, and support for workers to understand their rights."
+        },
+        {
+          "label": "Extra permanent residence spaces",
+          "status": "partly",
+          "note": "Mentions a time-limited increase in Provincial Nominee Program spaces, without saying how many."
+        },
+        {
+          "label": "How results will be measured",
+          "status": "no",
+          "note": "Says the government will monitor labour market conditions, but gives no evaluation plan or targets."
+        }
+      ],
+      "established": [
+        "Low-wage LMIAs submitted from November 6, 2026 can last up to two years",
+        "Processing stays paused in areas with unemployment of 6% or higher, except in priority sectors",
+        "Proposed opt-in changes would take effect March 1, 2027"
+      ],
+      "find": [
+        {
+          "label": "The full news release",
+          "url": "https://www.canada.ca/en/employment-social-development/news/2026/11/government-of-canada-announces-targeted-reforms-to-the-temporary-foreign-worker-program-to-respond-to-labour-market-needs.html",
+          "look": "Each change by type of area, and the enforcement rules"
+        },
+        {
+          "label": "Budget 2026",
+          "url": "https://budget.canada.ca/2026/home-accueil-en.html",
+          "look": "The funding lines behind the program and worker-support money"
+        },
+        {
+          "label": "House of Commons",
+          "url": "https://www.ourcommons.ca/",
+          "look": "Committee hearings where ministers answer questions on immigration and labour"
+        }
+      ]
+    }
   }
 ];
 
 /* Every update from the sources, newest first. "story" links to a top story with a deep dive. */
 window.NEWS_UPDATES = [
+  {
+    "scope": "canada",
+    "date": "Nov 7",
+    "agency": "Environment and Climate Change Canada",
+    "title": "Environment minister presents the homelessness plan in Toronto",
+    "url": "https://www.canada.ca/en/environment-climate-change/news/2026/11/minister-dabrusin-highlights-budget-2026s-plan-to-end-homelessness-within-10-years.html"
+  },
+  {
+    "scope": "canada",
+    "date": "Nov 7",
+    "agency": "Canada Mortgage and Housing Corporation",
+    "title": "Over $14.9 million in federal funding for 48 rental homes in Regina for Indigenous women and their children",
+    "url": "https://www.cmhc-schl.gc.ca/media-newsroom/news-releases/2026/regina-highlights-government-canadas-investments-from-budget-2026-masters-of-our-destiny"
+  },
+  {
+    "scope": "canada",
+    "date": "Nov 6",
+    "agency": "Employment and Social Development Canada",
+    "title": "Changes to the Temporary Foreign Worker Program, with more proposed for March 2027",
+    "url": "https://www.canada.ca/en/employment-social-development/news/2026/11/government-of-canada-announces-targeted-reforms-to-the-temporary-foreign-worker-program-to-respond-to-labour-market-needs.html",
+    "story": "tfw"
+  },
   {
     "scope": "canada",
     "date": "Nov 6",
@@ -524,9 +627,9 @@ window.NEWS_UPDATES = [
   },
   {
     "scope": "bc",
-    "date": "Nov 6",
+    "date": "Nov 7",
     "agency": "Elections BC",
-    "title": "Final count under way for the provincial election",
+    "title": "Final count continues; preliminary turnout now 51.51%",
     "url": "https://results.elections.bc.ca/",
     "story": "count"
   },
@@ -536,52 +639,8 @@ window.NEWS_UPDATES = [
     "agency": "BC Coroners Service",
     "title": "Inquest dates set into the death of Chase de Balinhard",
     "url": "https://news.gov.bc.ca/releases/2026PSSG0074-001132"
-  },
-  {
-    "scope": "bc",
-    "date": "Oct 22",
-    "agency": "Transportation and Transit",
-    "title": "Overnight ramp closures on Highway 1 at Mount Lehman Road",
-    "url": "https://news.gov.bc.ca/releases/2026TT0105-001130"
-  },
-  {
-    "scope": "bc",
-    "date": "Oct 14",
-    "agency": "BC Coroners Service",
-    "title": "113 deaths in July and 126 in August from unregulated drug toxicity (preliminary)",
-    "url": "https://news.gov.bc.ca/releases/2026PSSG0071-001124"
-  },
-  {
-    "scope": "bc",
-    "date": "Oct 13",
-    "agency": "Transportation and Transit",
-    "title": "Allenby Road closure in Duncan extended to spring 2027",
-    "url": "https://news.gov.bc.ca/releases/2026TT0104-001125"
-  },
-  {
-    "scope": "bc",
-    "date": "Oct 7",
-    "agency": "Health",
-    "title": "Respiratory season immunizations begin",
-    "url": "https://news.gov.bc.ca/releases/2026HLTH0086-001123"
-  },
-  {
-    "scope": "bc",
-    "date": "Sept 22",
-    "agency": "Mining and Critical Minerals",
-    "title": "Faster permits for mineral exploration",
-    "url": "https://news.gov.bc.ca/releases/2026MCM0031-001120",
-    "story": "mining"
-  },
-  {
-    "scope": "bc",
-    "date": "Sept 22",
-    "agency": "Infrastructure",
-    "title": "23 new and upgraded schools opening",
-    "url": "https://news.gov.bc.ca/releases/2026INF0055-001104",
-    "story": "schools"
   }
 ];
 
 /* When this content was last refreshed (ISO time with offset). Shown to readers in their own time zone. */
-window.LAST_UPDATED = "2026-11-07T16:58:00-07:00";
+window.LAST_UPDATED = "2026-11-08T06:41:23-07:00";
